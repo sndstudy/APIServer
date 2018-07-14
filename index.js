@@ -2,6 +2,7 @@ let express = require('express');
 let cors = require('cors');
 let app = express();
 
+//クロスオリジン
 app.use(cors());
 
 app.get('/', (req, res) => {
