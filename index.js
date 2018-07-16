@@ -1,5 +1,6 @@
 let express = require('express');
 let cors = require('cors');
+let Service = require('./src/service/service');
 let app = express();
 
 //クロスオリジン

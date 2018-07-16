@@ -1,8 +1,4 @@
-let NeDB = require('nedb');
-let db = new NeDB({
-    filename: '../db/member.db'
-});
-
+let Dao = require('../dao/dao');
 
 class Service{
 
@@ -10,16 +6,12 @@ class Service{
 
     }
 
-    getMemberList(){
+    doMain(){
 
-        let NeDB = require('nedb');
-        let db = new NeDB({
-            filename: '../db/member.db'
-        });
+        let dao = new Dao();
+        dao.findAll().then((value)=>{
 
-        db.loadDatabase();
-
-        db.find({},() =>{
+            console.log(value);
 
         });
 
@@ -27,3 +19,5 @@ class Service{
 
 }
 
+let service = new Service();
+service.doMain();
